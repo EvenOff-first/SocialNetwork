@@ -1,0 +1,16 @@
+.contentImage img {
+    width: 1200px;
+    height: 300px;
+}
+
+.Description {
+    font-size: 30px;
+    text-align: center;
+    width: 200px;
+}
+
+.MyProfile img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50px;
+}
