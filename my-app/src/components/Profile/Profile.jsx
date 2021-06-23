@@ -1,4 +1,4 @@
-import state from '../../redux/state';
+
 import MyPosts from './MyPosts/MyPosts';
 import css from './Profile.module.css';
 

@@ -6,7 +6,6 @@ import css from "./Dialogs.module.css";
 import Message from "./Messages/Message";
 
 const Dialogs = (props) => {
-
     let friendsNames = props.dialogs.map(p => {
         return <Dialog name={p.name} id={p.id} />;
     });

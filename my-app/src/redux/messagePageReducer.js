@@ -1,28 +1,45 @@
 const updateNewMessageText = "UPDATE-NEW-MESSAGE-TEXT";
 const createNewMessage = "CREATE-NEW-MESSAGE";
 
-const messagePageReducer = (state, action) => {
+let initialState = {
+    MessagePage: {
+        dialogs: [
+            { id: 1, name: "Max" },
+            { id: 2, name: "Alya" },
+            { id: 3, name: "Den" },
+            { id: 4, name: "Ram" },
+            { id: 5, name: "Rose" }],
+        messages: [
+            { id: 1, message: "Hi!" },
+            { id: 2, message: "How are you?" },
+            { id: 3, message: "Whats your anything?" },
+            { id: 4, message: "Everything is okey." },
+            { id: 5, message: "Bye" }],
+        newMessage: ""
+    }
+}
+
+const messagePageReducer = (state = initialState, action) => {
 
     switch (action.type) {
         case createNewMessage:
-            let newMessageId = state.messages.length + 1;
+            let newMessageId = state.MessagePage.messages.length + 1;
             let message = {
                 id: newMessageId,
                 message: action.newMessage,
             }
 
-            state.messages.push(message);
-            state.newMessage = "";
-            break;
+            state.MessagePage.messages.push(message);
+            state.MessagePage.newMessage = "";
+            return state;
 
         case updateNewMessageText:
-            state.newMessage = action.newMessage;
-            break;
+            state.MessagePage.newMessage = action.newMessage;
+            return state;
         default: 
             return state;
     }
 
-    return state;
 }
 
 export const createNewMessageActionCreator = (newMessage) => {

@@ -15,14 +15,14 @@ const App = (props) => {
 
           <Route path="/dialogs" render={
             () => <Dialogs 
-              dialogs={props.state.MessagePage.dialogs}
-              messages={props.state.MessagePage.messages}
-              newMessage = {props.state.MessagePage.newMessage} 
+              dialogs={props.state.messagePage.MessagePage.dialogs}
+              messages={props.state.messagePage.MessagePage.messages}
+              newMessage = {props.state.messagePage.MessagePage.newMessage} 
               dispatch = {props.dispatch}/>
               } />
           <Route path="/profile" render={ 
             () => <Profile 
-            profilePage={props.state.ProfilePage}
+            profilePage={props.state.profilePage.ProfilePage}
             dispatch = {props.dispatch}/>
             } />
         </div>
