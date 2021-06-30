@@ -6,10 +6,9 @@ import App from './App';
 import store from "./redux/redux-store";
 
 let rerenderEntireTree = (state) => {
-    debugger;
     ReactDOM.render(
         <React.StrictMode>
-            <App state={state} dispatch = {store.dispatch.bind(store)} />
+            <App state = {state} store={store} dispatch = {store.dispatch.bind(store)} />
         </React.StrictMode>,
         document.getElementById('root')
       );

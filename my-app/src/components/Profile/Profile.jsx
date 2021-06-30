@@ -1,5 +1,5 @@
 
-import MyPosts from './MyPosts/MyPosts';
+import MyPostsContainer from './MyPosts/MyPostsContainer';
 import css from './Profile.module.css';
 
 const Profile = (props) => {
@@ -8,11 +8,11 @@ const Profile = (props) => {
       <div className={css.contentImage}>
         <img src="https://www.pngkey.com/png/full/940-9404361_1200-x-300-1-welcome-to-the-team.png" />
       </div>
-      <div className = {css.MyProfile}>
-        <img src = {props.image}/>
-        <span className = {css.Description}>{props.description}</span>
+      <div className={css.MyProfile}>
+        <img src={props.image} />
+        <span className={css.Description}>{props.description}</span>
       </div>
-      <MyPosts newPostText = {props.profilePage.newPostText} posts = {props.profilePage.posts} dispatch = {props.dispatch} />
+      <MyPostsContainer store = {props.store} />;
     </div>
   );
 }
